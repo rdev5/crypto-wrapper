@@ -1,0 +1,23 @@
+{
+   "name": "crypto-wrapper",
+   "version": "0.1.5",
+   "description": "Wrapper module for demonstrating and simplifying Crypto implementation in Node.js",
+   "main": "./lib/crypto-wrapper",
+	"author": {
+		"name": "rdev5",
+		"email": "rdev5@borjawebs.com"
+	},
+	"homepage": "https://github.com/rdev5/crypto-wrapper",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:rdev5/crypto-wrapper.git"
+	},
+   "dependencies": {
+		"bcrypt": "~0.7.7",
+		"scrypt": "~2.0.0"
+   },
+   "devDependencies": {
+
+   },
+   "readmeFilename": "README.md"
+}
