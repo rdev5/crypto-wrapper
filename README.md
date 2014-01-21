@@ -1,7 +1,7 @@
 # crypto-wrapper
 > Wrapper module for demonstrating and simplifying Crypto implementation in Node.js
 
-Version 0.1.5 implements **bcrypt** for the following methods:
+Version 0.2.0 implements **bcrypt** for the following methods:
 * GenerateSalt()
 * Hash() and VerifyHash()
 
