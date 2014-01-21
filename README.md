@@ -36,3 +36,6 @@ $ openssl rsa -in examples/keyfiles/sample-privkey.pem -pubout > examples/keyfil
 
 ## Getting Started
 To get started, take a look at the [examples](https://github.com/rdev5/crypto-wrapper/tree/master/examples) included.
+
+## Disclaimer
+This software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
