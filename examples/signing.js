@@ -13,4 +13,4 @@ console.log('=== SIGNATURE ===');
 console.log(data_sig);
 console.log('=== END MESSAGE ===');
 
-console.log('Valid signature: ' + crypto.Verify(data, data_sig));
+console.log('Valid signature: ' + crypto.VerifySignature(data, data_sig));

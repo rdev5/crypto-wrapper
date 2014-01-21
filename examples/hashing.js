@@ -4,7 +4,7 @@
 var CryptoWrapper = require('../lib/crypto-wrapper');
 var crypto = new CryptoWrapper();
 
-var data = 'MyPassword-' + crypto.GenerateKey();
+var data = 'MyPassword123';
 var hash = crypto.Hash(data);
 
 console.log('=== BEGIN SECRET ===');
