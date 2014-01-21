@@ -1,8 +1,12 @@
-crypto-wrapper
-==============
+# crypto-wrapper
 > Wrapper module for demonstrating and simplifying Crypto implementation in Node.js
 
-Configuration:
+Version 0.1.5 implements **bcrypt** for the following methods:
+* GenerateSalt()
+* Hash() and VerifyHash()
+
+## Configuration:
+When no configuration is passed to the `CryptoWrapper()` construtor method, the following hard-coded options will be used:
 ````
 var default_options = {
    format: 'hex',
@@ -24,10 +28,11 @@ var default_options = {
 };
 ````
 
-Generating a public/private keypair for signing:
+## Generating a public/private keypair for signing:
 ````
 $ openssl genrsa -out examples/keyfiles/sample-privkey.pem 1024
 $ openssl rsa -in examples/keyfiles/sample-privkey.pem -pubout > examples/keyfiles/sample-key.pub
 ````
 
+## Getting Started
 To get started, take a look at the [examples](https://github.com/rdev5/crypto-wrapper/tree/master/examples) included.
