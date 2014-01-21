@@ -21,6 +21,10 @@ crypto.GenerateIV(null, function(err, iv) {
       }
 
       crypto.Decipher(ciphertext, secret_key, salt, iv, function(err, plaintext) {
+			if (err) {
+				console.log(err);
+				return;
+			}
 
 			console.log('=== BEGIN DATA ===');
 			console.log(data);
