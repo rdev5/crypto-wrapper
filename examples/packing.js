@@ -6,7 +6,7 @@ var crypto = new CryptoWrapper();
 
 var iv_size = 16;
 var secret_key = 'MyPassword123';
-var salt = 'MySalt890';
+var salt = crypto.GenerateSalt();
 var data = 'Hi John!\n\nIt was nice meeting up with you at CryptoCon this past weekend. Here is my public key:\nABCDEF123\n\nBob';
 
 crypto.GenerateIV(null, function(err, iv) {
