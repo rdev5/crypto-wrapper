@@ -1,6 +1,6 @@
 {
    "name": "crypto-wrapper",
-   "version": "0.1.5",
+   "version": "0.2.0",
    "description": "Wrapper module for demonstrating and simplifying Crypto implementation in Node.js",
    "main": "./lib/crypto-wrapper",
 	"author": {
