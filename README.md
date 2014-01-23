@@ -1,13 +1,18 @@
 # crypto-wrapper
 > Wrapper module for demonstrating and simplifying Crypto implementation in Node.js
 
-Version 1.0.0 implements **scrypt** from the following methods:
+**Version 1.0.0** implements **scrypt** for the following methods:
 * KDF
 * Hash100() and VerifyHash100()
 
-Version 0.2.0 implements **bcrypt** for the following methods:
+**Version 0.2.0** implements **bcrypt** for the following methods:
 * GenerateSalt020()
 * Hash020() and VerifyHash020()
+
+## Dependencies:
+* [node-scrypt](https://github.com/barrysteyn/node-scrypt)
+* [node.bcrypt.js](https://github.com/ncb000gt/node.bcrypt.js/)
+* [lodash](https://github.com/lodash/lodash)
 
 ## Configuration:
 When no configuration is passed to the `CryptoWrapper()` construtor method, the following hard-coded options will be used:
