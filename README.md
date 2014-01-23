@@ -2,12 +2,13 @@
 > Wrapper module for demonstrating and simplifying Crypto implementation in Node.js
 
 **Version 1.0.0** implements **scrypt** for the following methods:
-* KDF
-* Hash100() and VerifyHash100()
+* Cipher100() and Decipher100()
+* Hash100() and VerifyHash100() with message authentication
 
-**Version 0.2.0** implements **bcrypt** for the following methods:
+**Version 0.2.0** implements **bcrypt** and **PBKDF2** for the following methods:
 * GenerateSalt020()
 * Hash020() and VerifyHash020()
+* Cipher020() and Decipher020() without message authentication
 
 ## Dependencies:
 * [node-scrypt](https://github.com/barrysteyn/node-scrypt)
