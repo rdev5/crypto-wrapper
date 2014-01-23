@@ -11,7 +11,7 @@
 		"cipher",
 		"kdf",
 		"hash",
-		"mac",
+		"mac"
 	],
    "main": "./lib/crypto-wrapper",
 	"author": {
