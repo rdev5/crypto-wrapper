@@ -6,7 +6,7 @@ Version 1.0.0 implements **scrypt** from the following methods:
 * Hash100() and VerifyHash100()
 
 Version 0.2.0 implements **bcrypt** for the following methods:
-* GenerateSalt()
+* GenerateSalt020()
 * Hash020() and VerifyHash020()
 
 ## Configuration:
