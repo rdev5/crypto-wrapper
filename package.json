@@ -2,6 +2,17 @@
    "name": "crypto-wrapper",
    "version": "1.0.0",
    "description": "Wrapper module for demonstrating and simplifying Crypto implementation in Node.js",
+	"keywords": [
+		"encryption",
+		"crypto"
+		"scrypt",
+		"bcrypt",
+		"password",
+		"cipher",
+		"kdf",
+		"hash",
+		"mac",
+	],
    "main": "./lib/crypto-wrapper",
 	"author": {
 		"name": "rdev5",
