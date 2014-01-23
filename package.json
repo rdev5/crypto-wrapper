@@ -4,11 +4,11 @@
    "description": "Wrapper module for demonstrating and simplifying Crypto implementation in Node.js",
 	"keywords": [
 		"encryption",
-		"crypto"
+		"crypto",
+		"cipher",
 		"scrypt",
 		"bcrypt",
 		"password",
-		"cipher",
 		"kdf",
 		"hash",
 		"mac"
