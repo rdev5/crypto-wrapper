@@ -8,7 +8,7 @@
 **Version 0.2.0** implements **bcrypt** and **PBKDF2** for the following methods:
 * `GenerateSalt020()`
 * `Hash020()` and `VerifyHash020()`
-* `Cipher020()` and `Decipher020()` without message authentication
+* `Cipher020()` and `Decipher020()` with no message authentication
 
 ## Dependencies:
 * [node-scrypt](https://github.com/barrysteyn/node-scrypt)
