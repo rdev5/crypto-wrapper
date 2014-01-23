@@ -13,7 +13,7 @@ var data = 'Hi John!\n\nIt was nice meeting up with you at CryptoCon this past w
 // 2. Verify packed_string received against packed_sig
 // 3. If valid signature, decrypt
 
-crypto.Encrypt(data, secret_key, salt, function(err, packed_string) {
+crypto.Encrypt020(data, secret_key, salt, function(err, packed_string) {
 	if (err) {
 		console.log(err);
 		return;
@@ -22,7 +22,7 @@ crypto.Encrypt(data, secret_key, salt, function(err, packed_string) {
 	var packed_sig = crypto.Sign(packed_string);
 
 	if (crypto.VerifySignature(packed_string, packed_sig)) {
-		crypto.Decrypt(packed_string, secret_key, salt, function(err, plaintext) {
+		crypto.Decrypt020(packed_string, secret_key, salt, function(err, plaintext) {
 			if (err) {
 				console.log(err);
 				return;

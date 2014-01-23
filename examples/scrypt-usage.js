@@ -29,7 +29,7 @@ var options = {
 		keyEncoding: 'ascii',
 		outputEncoding: 'hex',
 		defaultSaltSize: 32,
-		outputSize: 64
+		outputLength: 16
 	},
 
 	// kdf_params
