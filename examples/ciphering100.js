@@ -5,7 +5,6 @@ var CryptoWrapper = require('../lib/crypto-wrapper');
 var crypto = new CryptoWrapper();
 
 var secret_key = 'MyPassword123';
-var salt = 'MySalt890';
 var data = 'Hi John!\n\nIt was nice meeting up with you at CryptoCon this past weekend. Here is my public key:\nABCDEF123\n\nBob';
 
 crypto.GenerateIV(null, function(err, iv) {
@@ -14,27 +13,26 @@ crypto.GenerateIV(null, function(err, iv) {
       return;
    }
 
-   crypto.Cipher(data, secret_key, salt, iv, function(err, ciphertext) {
+   crypto.Cipher100(data, secret_key, iv, function(err, cipher) {
       if (err) {
          console.log(err);
          return;
       }
 
-      crypto.Decipher(ciphertext, secret_key, salt, iv, function(err, plaintext) {
+      // WARNING: cipher contains hashed_key for demonstration purposes
+		console.log('=== BEGIN CIPHER100 ===');
+		console.log(cipher);
+		console.log('=== END ===');
+
+		crypto.Decipher100(cipher.ciphertext, cipher.hashed_key, cipher.iv, function(err, decipher) {
 			if (err) {
 				console.log(err);
 				return;
 			}
 
-			console.log('=== BEGIN DATA ===');
-			console.log(data);
-			console.log('=== CIPHER ===');
-			console.log('IV: ' + iv.toString('hex'));
-			console.log('Ciphertext: ' + ciphertext);
-			console.log('=== DECIPHER ===');
-			console.log(plaintext);
-			console.log('=== END DATA ===');
-
-      });
+			console.log('=== BEGIN DECIPHER100 ===');
+			console.log(decipher);
+			console.log('=== END ===');
+		});
    });
 });
