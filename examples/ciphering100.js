@@ -13,50 +13,37 @@ crypto.GenerateIV(null, function(err, iv) {
       return;
    }
 
-   crypto.Cipher100(data, secret_key, iv, function(err, cipher) {
+   crypto.Cipher100(data, secret_key, iv, function(err, ciphered_obj) {
       if (err) {
          console.log(err);
          return;
       }
 
-      // WARNING: cipher contains hashed_key for demonstration purposes
-		console.log('=== BEGIN CIPHER100 ===');
-		console.log(cipher);
-		console.log('=== END ===');
+      // Demonstrate normal deciphering
+		console.log('=== BEGIN NORMAL DECIPHER100 ===');
+		console.log(ciphered_obj);
 		console.log();
 
-		var ciphertext_obj = {
-			iv: cipher.iv,
-			ciphertext: cipher.ciphertext,
-			hashed_key: cipher.hashed_key
-		};
-
-		var mac_obj = {
-			mactag: cipher.mactag,
-			mac_key: cipher.mac_key,
-		};
-
-		console.log('=== BEGIN DECIPHER100 ===');
-		crypto.Decipher100(ciphertext_obj, mac_obj, function(err, decipher) {
+		crypto.Decipher100(ciphered_obj, function(err, decipher) {
 			if (err) {
 				console.log(err);
-				console.log('=== END DECIPHER100 ===');
+				console.log('=== END NORMAL DECIPHER100 ===');
 				return;
 			}
 
 			console.log(decipher);
-			console.log('=== END DECIPHER100 ===');
+			console.log('=== END NORMAL DECIPHER100 ===');
 		});
 
 		// Demonstrate tampering with data
-		mac_obj.mactag = (mac_obj.mactag).replace(/[abcdef]/ig, 'Z');
+		ciphered_obj.mactag = (ciphered_obj.mactag).replace(/[abcdef]/ig, 'Z');
 
 		console.log();
 		console.log('=== BEGIN TAMPERING DECIPHER100 ===');
-		console.log(mac_obj);
+		console.log(ciphered_obj);
 		console.log();
 
-		crypto.Decipher100(ciphertext_obj, mac_obj, function(err, decipher) {
+		crypto.Decipher100(ciphered_obj, function(err, decipher) {
 			if (err) {
 				console.log(err);
 				console.log('=== END TAMPERING DECIPHER100 ===');
