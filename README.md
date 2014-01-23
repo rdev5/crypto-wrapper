@@ -1,9 +1,13 @@
 # crypto-wrapper
 > Wrapper module for demonstrating and simplifying Crypto implementation in Node.js
 
+Version 1.0.0 implements **scrypt** from the following methods:
+* KDF
+* Hash100() and VerifyHash100()
+
 Version 0.2.0 implements **bcrypt** for the following methods:
 * GenerateSalt()
-* Hash() and VerifyHash()
+* Hash020() and VerifyHash020()
 
 ## Configuration:
 When no configuration is passed to the `CryptoWrapper()` construtor method, the following hard-coded options will be used:
@@ -15,16 +19,33 @@ var default_options = {
    iv_size: 16,
    key_size: 16,
    key_iterations: 100000,
+   mac_key_size: 64,
 
    salt_rounds: 12,
    seed_length: 40,
 
    cipher_algorithm: 'aes-128-cbc',
+   mac_algorithm: 'sha512',
    hash_algorithm: 'sha512',
    signer_algorithm: 'sha1',
 
    private_key_file: './examples/keyfiles/sample-privkey.pem',
    public_key_file: './examples/keyfiles/sample-key.pub',
+
+	// scrypt.params()
+	// { N: 16, r: 1, p: 1 }		// test vector 1
+	// { N: 1024, r: 8, p: 16 }	// test vector 2
+	// { N: 16384, r: 8, p: 1 }	// test vector 3
+	// { N: 1048576, r: 8, p: 1 }	// test vector 4 (experimental)
+	scrypt_params: { N: 16384, r: 8, p: 1 },
+
+	scrypt_kdf_config: {
+		saltEncoding: 'buffer',
+		keyEncoding: 'ascii',
+		outputEncoding: 'buffer',
+		defaultSaltSize: 256,
+		outputLength: 80 // key_size + mac_key_size
+	},
 };
 ````
 
@@ -39,6 +60,7 @@ To get started, take a look at the [examples](https://github.com/rdev5/crypto-wr
 
 ## References
 Before using this library, it is *highly recommended* that you read through the following resources to help establish a more solid understanding of crypto methodologies and best practices.
+* [Crypto Implementation (DRAFT)](https://github.com/rdev5/crypto-wrapper/wiki/Crypto-Implementation-%28DRAFT%29)
 * [What Are The Essential Properties For Storing Passwords](https://github.com/barrysteyn/node-scrypt#what-are-the-essential-properties-for-storing-passwords)
 * [How to Safely Store a Password](http://codahale.com/how-to-safely-store-a-password/)
 * [Stronger Key Derivation via Sequential Memory-Hard Functions](http://www.tarsnap.com/scrypt/scrypt.pdf)
