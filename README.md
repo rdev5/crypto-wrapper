@@ -1,6 +1,12 @@
 # crypto-wrapper
-> Wrapper module for demonstrating and simplifying Crypto implementation in Node.js
+> Wrapper module for demonstrating and simplifying Crypto implementation in Node.js<br />
 
+### Have feedback or suggestions?
+> Log on to `irc.freenode.net` and join the rest of us in `##crypto` today!
+
+The preferred method for flagging something that needs attention would be to [Open a New Issue](https://github.com/rdev5/crypto-wrapper/issues) and adding an appropriate **Label**.
+
+### What's New
 **Version 1.0.0** implements **scrypt** for the following methods:
 * `Cipher100()` and `Decipher100()` (forces message authentication on decipher)
 * `Hash100()` and `VerifyHash100()` (built-in message authentication)
