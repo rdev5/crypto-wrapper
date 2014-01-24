@@ -1,8 +1,8 @@
 # crypto-wrapper
 > Wrapper module for demonstrating and simplifying Crypto implementation in Node.js<br />
 
-### Have feedback or suggestions?
-> Log on to `irc.freenode.net` and join the rest of us in `##crypto` today!
+### Have feedback or suggestions? Want to talk about crypto?
+> Log on to `irc.freenode.net` and join the `##crypto` crowd!
 
 The preferred method for flagging something that needs attention would be to [Open a New Issue](https://github.com/rdev5/crypto-wrapper/issues) and adding an appropriate **Label**.
 
